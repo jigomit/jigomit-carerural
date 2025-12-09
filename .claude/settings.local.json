@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(php artisan wayfinder:generate:*)",
+      "mcp__laravel-boost__application-info",
+      "Bash(curl:*)",
+      "Bash(npm install)",
+      "Bash(open http://localhost:5173/)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "laravel-boost",
+    "herd"
+  ]
+}
