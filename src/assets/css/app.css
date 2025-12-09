@@ -86,6 +86,21 @@ footer {
     height: 600px !important;
     min-height: 600px !important;
     max-height: 600px !important;
+    position: relative !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    isolation: isolate;
+}
+
+/* Reserve space for footer in main layout */
+.min-h-screen {
+    min-height: calc(100vh + 600px);
+}
+
+/* Ensure footer doesn't cause layout shift when added */
+#app footer {
+    margin-top: 0 !important;
+    transform: translateZ(0) !important;
 }
 
 /* Optimize animations to prevent layout shifts */

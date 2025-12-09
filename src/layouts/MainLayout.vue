@@ -261,7 +261,7 @@ const socialLinks = [
         </main>
 
         <!-- Footer -->
-        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]" style="height: 600px; min-height: 600px; max-height: 600px; contain: strict; content-visibility: auto; will-change: contents;">
+        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]" style="height: 600px; min-height: 600px; max-height: 600px; contain: strict; content-visibility: auto; will-change: contents; position: relative; transform: translateZ(0); backface-visibility: hidden; isolation: isolate; flex-shrink: 0;">
             <!-- Background decoration -->
             <div class="absolute inset-0 overflow-hidden" style="contain: layout; pointer-events: none;">
                 <div class="absolute top-0 left-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#0EA5E9]/5 dark:bg-[#0EA5E9]/5 bg-[#0EA5E9]/10 blur-3xl"></div>
