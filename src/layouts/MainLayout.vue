@@ -14,6 +14,7 @@ const navLinks = [
     { name: 'Services', href: '/services' },
     { name: 'Programs', href: '/programs' },
     { name: 'Impact', href: '/impact' },
+    { name: 'Blog', href: '/blog' },
     { name: 'News', href: '/news' },
     { name: 'Contact', href: '/contact' },
 ];
@@ -260,11 +261,11 @@ const socialLinks = [
         </main>
 
         <!-- Footer -->
-        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]">
+        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]" style="min-height: 600px;">
             <!-- Background decoration -->
-            <div class="absolute inset-0">
-                <div class="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#0EA5E9]/5 dark:bg-[#0EA5E9]/5 bg-[#0EA5E9]/10 blur-3xl"></div>
-                <div class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-[#8B5CF6]/5 dark:bg-[#8B5CF6]/5 bg-[#8B5CF6]/10 blur-3xl"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-0 left-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#0EA5E9]/5 dark:bg-[#0EA5E9]/5 bg-[#0EA5E9]/10 blur-3xl"></div>
+                <div class="absolute bottom-0 right-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#8B5CF6]/5 dark:bg-[#8B5CF6]/5 bg-[#8B5CF6]/10 blur-3xl"></div>
             </div>
 
             <!-- Main Footer -->
@@ -272,8 +273,8 @@ const socialLinks = [
                 <div class="grid gap-12 lg:grid-cols-4">
                     <!-- Brand Column -->
                     <div class="lg:col-span-1">
-                        <router-link to="/" class="group mb-6 flex items-center gap-3">
-                            <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] shadow-lg transition-transform group-hover:scale-110">
+                        <router-link to="/" class="group mb-6 flex items-center gap-3" style="min-height: 48px;">
+                            <div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] shadow-lg transition-transform group-hover:scale-110">
                                 <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M19 8h-3V5a1 1 0 00-1-1h-6a1 1 0 00-1 1v3H5a1 1 0 00-1 1v6a1 1 0 001 1h3v3a1 1 0 001 1h6a1 1 0 001-1v-3h3a1 1 0 001-1V9a1 1 0 00-1-1z" />
                                 </svg>
@@ -282,7 +283,7 @@ const socialLinks = [
                                     <span class="relative inline-flex rounded-full h-3 w-3 bg-[#10B981]"></span>
                                 </span>
                             </div>
-                            <div>
+                            <div class="min-w-0">
                                 <span class="text-xl font-bold text-[#0F172A] dark:text-white">Rural<span class="text-[#10B981]">Care</span></span>
                                 <span class="block text-[10px] font-medium tracking-wider text-[#64748B]">HEALTHCARE FOR ALL</span>
                             </div>
@@ -322,7 +323,7 @@ const socialLinks = [
                     </div>
 
                     <!-- Quick Links -->
-                    <div>
+                    <div class="hidden lg:block">
                         <h4 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Quick Links</h4>
                         <ul class="space-y-4">
                             <li v-for="link in quickLinks" :key="link.name">

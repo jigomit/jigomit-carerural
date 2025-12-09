@@ -3,7 +3,9 @@ import MainLayout from '@/layouts/MainLayout.vue';
 </script>
 
 <template>
-    <MainLayout>
-        <router-view />
-    </MainLayout>
+    <div class="overflow-x-hidden w-full">
+        <MainLayout>
+            <router-view />
+        </MainLayout>
+    </div>
 </template>

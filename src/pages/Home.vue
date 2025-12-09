@@ -136,10 +136,10 @@ onMounted(() => {
         <!-- Hero Section -->
         <section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A]">
             <!-- Animated Background -->
-            <div class="absolute inset-0">
-                <div class="blob absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
-                <div class="blob absolute -bottom-40 -right-40 h-[600px] w-[600px] rounded-full bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 blur-3xl" style="animation-delay: 2s;"></div>
-                <div class="blob absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EC4899]/5 dark:bg-[#EC4899]/10 blur-3xl" style="animation-delay: 4s;"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="blob absolute -top-20 -left-20 sm:-top-40 sm:-left-40 h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
+                <div class="blob absolute -bottom-20 -right-20 sm:-bottom-40 sm:-right-40 h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 blur-3xl" style="animation-delay: 2s;"></div>
+                <div class="blob absolute top-1/2 left-1/2 h-[200px] w-[200px] sm:h-[400px] sm:w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EC4899]/5 dark:bg-[#EC4899]/10 blur-3xl" style="animation-delay: 4s;"></div>
             </div>
 
             <!-- Grid pattern overlay -->
@@ -214,31 +214,31 @@ onMounted(() => {
                             </div>
 
                             <!-- Floating stats card -->
-                            <div class="absolute -bottom-6 -left-6 animate-float rounded-2xl p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
-                                <div class="flex items-center gap-3">
-                                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
-                                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 animate-float rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
+                                <div class="flex items-center gap-2 sm:gap-3">
+                                    <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
+                                        <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="text-2xl font-bold text-[#0F172A] dark:text-white">98%</p>
-                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Treatment Success</p>
+                                        <p class="text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white">98%</p>
+                                        <p class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8]">Treatment Success</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Floating badge -->
-                            <div class="absolute -top-4 -right-4 animate-float rounded-2xl p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s;">
-                                <div class="flex items-center gap-3">
-                                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
-                                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-2 right-2 sm:-top-4 sm:-right-4 animate-float rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s;">
+                                <div class="flex items-center gap-2 sm:gap-3">
+                                    <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
+                                        <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="text-2xl font-bold text-[#0F172A] dark:text-white">75K+</p>
-                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Lives Changed</p>
+                                        <p class="text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white">75K+</p>
+                                        <p class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8]">Lives Changed</p>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +327,7 @@ onMounted(() => {
 
         <!-- Mission Section -->
         <section class="relative overflow-hidden bg-[#F8FAFC] dark:bg-[#1E293B] py-24 lg:py-32">
-            <div class="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#0EA5E9]/10 to-[#8B5CF6]/10 blur-3xl"></div>
+            <div class="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 h-[250px] w-[250px] sm:h-[500px] sm:w-[500px] rounded-full bg-gradient-to-br from-[#0EA5E9]/10 to-[#8B5CF6]/10 blur-3xl"></div>
 
             <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid items-center gap-16 lg:grid-cols-2">
@@ -429,9 +429,9 @@ onMounted(() => {
                         </div>
 
                         <!-- Experience badge -->
-                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-6 text-center shadow-xl">
-                            <p class="text-4xl font-bold text-white">15+</p>
-                            <p class="text-sm text-white/80">Years of Excellence</p>
+                        <div class="absolute bottom-2 sm:-bottom-6 left-1/2 -translate-x-1/2 rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-4 sm:p-6 text-center shadow-xl max-w-[90%] sm:max-w-none">
+                            <p class="text-2xl sm:text-4xl font-bold text-white">15+</p>
+                            <p class="text-xs sm:text-sm text-white/80">Years of Excellence</p>
                         </div>
                     </div>
                 </div>
@@ -531,9 +531,9 @@ onMounted(() => {
 
         <!-- CTA Section -->
         <section class="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] bg-gradient-to-br from-[#E0F2FE] via-[#F0F9FF] to-[#F0FDF4] py-24 lg:py-32">
-            <div class="absolute inset-0">
-                <div class="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#0EA5E9]/20 dark:bg-[#0EA5E9]/20 bg-[#0EA5E9]/10 blur-3xl"></div>
-                <div class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-[#8B5CF6]/20 dark:bg-[#8B5CF6]/20 bg-[#8B5CF6]/10 blur-3xl"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-0 left-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#0EA5E9]/20 dark:bg-[#0EA5E9]/20 bg-[#0EA5E9]/10 blur-3xl"></div>
+                <div class="absolute bottom-0 right-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#8B5CF6]/20 dark:bg-[#8B5CF6]/20 bg-[#8B5CF6]/10 blur-3xl"></div>
             </div>
 
             <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">

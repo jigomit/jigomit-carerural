@@ -16,9 +16,9 @@ onMounted(() => {
         <div class="absolute inset-0 gradient-mesh"></div>
 
         <!-- Animated Blobs -->
-        <div class="absolute top-20 -right-32 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#0EA5E9]/20 to-[#8B5CF6]/20 blur-3xl animate-blob"></div>
-        <div class="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-[#10B981]/20 to-[#0EA5E9]/20 blur-3xl animate-blob" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#EC4899]/10 to-[#F59E0B]/10 blur-3xl animate-blob" style="animation-delay: 4s;"></div>
+        <div class="absolute top-20 -right-16 sm:-right-32 h-[250px] w-[250px] sm:h-[500px] sm:w-[500px] rounded-full bg-gradient-to-br from-[#0EA5E9]/20 to-[#8B5CF6]/20 blur-3xl animate-blob"></div>
+        <div class="absolute -bottom-16 -left-16 sm:-bottom-32 sm:-left-32 h-[200px] w-[200px] sm:h-[400px] sm:w-[400px] rounded-full bg-gradient-to-br from-[#10B981]/20 to-[#0EA5E9]/20 blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/2 h-[150px] w-[150px] sm:h-[300px] sm:w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#EC4899]/10 to-[#F59E0B]/10 blur-3xl animate-blob" style="animation-delay: 4s;"></div>
 
         <!-- Floating Elements -->
         <div class="absolute top-32 left-[10%] animate-float opacity-60">
@@ -106,37 +106,37 @@ onMounted(() => {
                     </div>
 
                     <!-- Floating card 1 -->
-                    <div class="card-glass absolute -bottom-6 -left-6 animate-float rounded-2xl p-4 shadow-xl">
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
-                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="card-glass absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 animate-float rounded-2xl p-3 sm:p-4 shadow-xl">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
+                                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
                             <div>
-                                <p class="font-bold text-[#0F172A]">Free Checkups</p>
-                                <p class="text-sm text-[#475569]">Every Sunday</p>
+                                <p class="text-sm sm:text-base font-bold text-[#0F172A]">Free Checkups</p>
+                                <p class="text-xs sm:text-sm text-[#475569]">Every Sunday</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Floating card 2 -->
-                    <div class="card-glass absolute -top-4 -right-4 animate-float rounded-2xl p-4 shadow-xl" style="animation-delay: 1s;">
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#D97706]">
-                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="card-glass absolute top-2 right-2 sm:-top-4 sm:-right-4 animate-float rounded-2xl p-3 sm:p-4 shadow-xl" style="animation-delay: 1s;">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#D97706]">
+                                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <p class="font-bold text-[#0F172A]">Expert Doctors</p>
-                                <p class="text-sm text-[#475569]">150+ Volunteers</p>
+                                <p class="text-sm sm:text-base font-bold text-[#0F172A]">Expert Doctors</p>
+                                <p class="text-xs sm:text-sm text-[#475569]">150+ Volunteers</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Decorative circle -->
-                    <div class="absolute -bottom-10 -right-10 -z-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#0EA5E9]/30 to-[#8B5CF6]/30 blur-2xl"></div>
+                    <div class="absolute -bottom-5 -right-5 sm:-bottom-10 sm:-right-10 -z-10 h-20 w-20 sm:h-40 sm:w-40 rounded-full bg-gradient-to-br from-[#0EA5E9]/30 to-[#8B5CF6]/30 blur-2xl"></div>
                 </div>
             </div>
         </div>
