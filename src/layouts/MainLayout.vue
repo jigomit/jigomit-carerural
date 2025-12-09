@@ -273,9 +273,9 @@ const socialLinks = [
 
             <!-- Main Footer -->
             <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20" style="contain: layout; height: 100%;">
-                <div class="grid gap-12 lg:grid-cols-4" style="contain: layout;">
+                <div class="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="contain: layout;">
                     <!-- Brand Column -->
-                    <div class="lg:col-span-1" style="contain: layout;">
+                    <div class="sm:col-span-2 lg:col-span-1" style="contain: layout;">
                         <router-link to="/" class="group mb-6 flex items-center gap-3" style="min-height: 48px; contain: layout;">
                             <div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] shadow-lg transition-transform group-hover:scale-110">
                                 <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -326,7 +326,7 @@ const socialLinks = [
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="hidden lg:block">
+                    <div>
                         <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Quick Links</h3>
                         <ul class="space-y-4">
                             <li v-for="link in quickLinks" :key="link.name">
@@ -352,33 +352,33 @@ const socialLinks = [
                     </div>
 
                     <!-- Contact Info -->
-                    <div>
+                    <div class="lg:col-span-1">
                         <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Contact Us</h3>
                         <ul class="space-y-4">
-                            <li class="flex gap-4">
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0EA5E9]/10">
+                            <li class="flex gap-3 sm:gap-4 items-start">
+                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0EA5E9]/10 mt-0.5">
                                     <svg class="h-5 w-5 text-[#0EA5E9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <span class="text-[#475569] dark:text-[#94A3B8]">{{ contact.address }}</span>
+                                <span class="text-sm sm:text-base text-[#475569] dark:text-[#94A3B8] leading-relaxed break-words">{{ contact.address }}</span>
                             </li>
-                            <li class="flex gap-4">
+                            <li class="flex gap-3 sm:gap-4 items-center">
                                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#10B981]/10">
                                     <svg class="h-5 w-5 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                 </div>
-                                <a :href="`tel:${contact.phone}`" class="text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">{{ contact.phone }}</a>
+                                <a :href="`tel:${contact.phone}`" class="text-sm sm:text-base text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white break-all">{{ contact.phone }}</a>
                             </li>
-                            <li class="flex gap-4">
+                            <li class="flex gap-3 sm:gap-4 items-center">
                                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#8B5CF6]/10">
                                     <svg class="h-5 w-5 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <a :href="`mailto:${contact.email}`" class="text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">{{ contact.email }}</a>
+                                <a :href="`mailto:${contact.email}`" class="text-sm sm:text-base text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white break-all">{{ contact.email }}</a>
                             </li>
                         </ul>
                     </div>
