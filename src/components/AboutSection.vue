@@ -138,7 +138,7 @@ const features = [
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#0F172A]">{{ feature.title }}</h4>
+                                <h3 class="font-bold text-[#0F172A]">{{ feature.title }}</h3>
                                 <p class="text-sm text-[#475569]">{{ feature.description }}</p>
                             </div>
                         </div>

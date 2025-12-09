@@ -559,9 +559,9 @@ onMounted(() => {
                         class="card-modern p-8"
                     >
                         <div class="mb-6 flex items-center gap-4">
-                            <img :src="testimonial.image" :alt="testimonial.name" class="h-16 w-16 rounded-full object-cover" />
+                            <img :src="testimonial.image" :alt="testimonial.name" class="h-16 w-16 rounded-full object-cover" loading="lazy" />
                             <div>
-                                <h4 class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</h4>
+                                <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
                                 <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ testimonial.condition }}</p>
                             </div>
                             <div class="ml-auto rounded-lg bg-[#10B981]/10 px-4 py-2">

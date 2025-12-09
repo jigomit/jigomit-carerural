@@ -187,9 +187,9 @@ function filterByCategory(category: string): void {
                         </div>
 
                         <div class="flex items-center gap-4 border-t border-[#E2E8F0] dark:border-[#334155] pt-4">
-                            <img :src="testimonial.avatar" :alt="testimonial.name" class="h-12 w-12 rounded-full object-cover" />
+                            <img :src="testimonial.avatar" :alt="testimonial.name" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
                             <div class="flex-1">
-                                <h4 class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</h4>
+                                <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
                                 <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ testimonial.role }}</p>
                                 <p class="text-xs text-[#94A3B8] dark:text-[#64748B]">{{ testimonial.location }}</p>
                             </div>

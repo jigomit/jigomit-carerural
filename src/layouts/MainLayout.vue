@@ -324,7 +324,7 @@ const socialLinks = [
 
                     <!-- Quick Links -->
                     <div class="hidden lg:block">
-                        <h4 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Quick Links</h4>
+                        <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Quick Links</h3>
                         <ul class="space-y-4">
                             <li v-for="link in quickLinks" :key="link.name">
                                 <router-link :to="link.href" class="group flex items-center gap-2 text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">
@@ -337,7 +337,7 @@ const socialLinks = [
 
                     <!-- Our Services -->
                     <div>
-                        <h4 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Our Services</h4>
+                        <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Our Services</h3>
                         <ul class="space-y-4">
                             <li v-for="service in services" :key="service.name">
                                 <router-link :to="service.href" class="group flex items-center gap-2 text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">
@@ -350,7 +350,7 @@ const socialLinks = [
 
                     <!-- Contact Info -->
                     <div>
-                        <h4 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Contact Us</h4>
+                        <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Contact Us</h3>
                         <ul class="space-y-4">
                             <li class="flex gap-4">
                                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0EA5E9]/10">

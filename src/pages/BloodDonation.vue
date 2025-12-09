@@ -574,9 +574,9 @@ onMounted(() => {
                     >
                         <p class="mb-6 text-lg text-[#475569] dark:text-[#94A3B8]">"{{ testimonial.quote }}"</p>
                         <div class="flex items-center gap-4">
-                            <img :src="testimonial.image" :alt="testimonial.name" class="h-14 w-14 rounded-full object-cover" />
+                            <img :src="testimonial.image" :alt="testimonial.name" class="h-14 w-14 rounded-full object-cover" loading="lazy" />
                             <div>
-                                <h4 class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</h4>
+                                <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
                                 <p class="text-sm text-[#EF4444]">{{ testimonial.type }}</p>
                             </div>
                         </div>

@@ -137,9 +137,9 @@ onUnmounted(() => {
                                 </div>
                             </div>
 
-                            <h4 class="mb-1 text-xl font-bold text-[#0F172A]">
+                            <p class="mb-1 text-xl font-bold text-[#0F172A]">
                                 {{ testimonials[currentSlide].name }}
-                            </h4>
+                            </p>
                             <p class="mb-4 text-[#475569]">{{ testimonials[currentSlide].role }}</p>
 
                             <!-- Rating Stars -->

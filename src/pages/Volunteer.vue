@@ -513,9 +513,9 @@ function handleSubmit(event: Event): void {
                             </div>
                             <p class="mb-4 text-[#475569]">"{{ testimonial.quote }}"</p>
                             <div class="flex items-center gap-3">
-                                <img :src="testimonial.image" :alt="testimonial.name" class="h-12 w-12 rounded-full object-cover" />
+                                <img :src="testimonial.image" :alt="testimonial.name" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
                                 <div>
-                                    <h4 class="font-bold text-[#0F172A]">{{ testimonial.name }}</h4>
+                                    <p class="font-bold text-[#0F172A]">{{ testimonial.name }}</p>
                                     <p class="text-sm text-[#64748B]">{{ testimonial.role }}</p>
                                 </div>
                             </div>

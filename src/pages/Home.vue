@@ -209,6 +209,8 @@ onMounted(() => {
                                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                                     alt="Healthcare workers helping rural community"
                                     class="h-full w-full object-cover"
+                                    fetchpriority="high"
+                                    loading="eager"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[#0F172A]/60 via-transparent to-transparent"></div>
                             </div>
@@ -354,7 +356,7 @@ onMounted(() => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-[#0F172A] dark:text-white">Accessible</h4>
+                                    <h3 class="font-semibold text-[#0F172A] dark:text-white">Accessible</h3>
                                     <p class="text-sm text-[#475569] dark:text-[#94A3B8]">Healthcare at your doorstep</p>
                                 </div>
                             </div>
@@ -365,7 +367,7 @@ onMounted(() => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-[#0F172A] dark:text-white">Affordable</h4>
+                                    <h3 class="font-semibold text-[#0F172A] dark:text-white">Affordable</h3>
                                     <p class="text-sm text-[#475569] dark:text-[#94A3B8]">Up to 80% lower costs</p>
                                 </div>
                             </div>
@@ -376,7 +378,7 @@ onMounted(() => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-[#0F172A] dark:text-white">Quality Care</h4>
+                                    <h3 class="font-semibold text-[#0F172A] dark:text-white">Quality Care</h3>
                                     <p class="text-sm text-[#475569] dark:text-[#94A3B8]">Expert medical professionals</p>
                                 </div>
                             </div>
@@ -387,7 +389,7 @@ onMounted(() => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-[#0F172A] dark:text-white">Sustainable</h4>
+                                    <h3 class="font-semibold text-[#0F172A] dark:text-white">Sustainable</h3>
                                     <p class="text-sm text-[#475569] dark:text-[#94A3B8]">Long-term community impact</p>
                                 </div>
                             </div>
@@ -407,11 +409,13 @@ onMounted(() => {
                                     src="https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Medical camp"
                                     class="h-48 w-full rounded-2xl object-cover object-center shadow-lg"
+                                    loading="lazy"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80"
                                     alt="Doctor consultation"
                                     class="h-64 w-full rounded-2xl object-cover shadow-lg"
+                                    loading="lazy"
                                 />
                             </div>
                             <div class="space-y-4 pt-8">
@@ -419,11 +423,13 @@ onMounted(() => {
                                     src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80"
                                     alt="Healthcare worker"
                                     class="h-64 w-full rounded-2xl object-cover shadow-lg"
+                                    loading="lazy"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80"
                                     alt="Community health"
                                     class="h-48 w-full rounded-2xl object-cover shadow-lg"
+                                    loading="lazy"
                                 />
                             </div>
                         </div>
@@ -467,9 +473,9 @@ onMounted(() => {
                         </div>
                         <p class="mb-6 text-lg text-[#475569] dark:text-[#CBD5E1]">"{{ testimonial.quote }}"</p>
                         <div class="flex items-center gap-4">
-                            <img :src="testimonial.image" :alt="testimonial.name" class="h-14 w-14 rounded-full object-cover" />
+                            <img :src="testimonial.image" :alt="testimonial.name" class="h-14 w-14 rounded-full object-cover" loading="lazy" />
                             <div>
-                                <h4 class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</h4>
+                                <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
                                 <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ testimonial.role }}</p>
                             </div>
                         </div>
@@ -515,7 +521,7 @@ onMounted(() => {
                         class="card-modern group overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl"
                     >
                         <div class="relative h-48 overflow-hidden">
-                            <img :src="article.image" :alt="article.title" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                            <img :src="article.image" :alt="article.title" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                         </div>
                         <div class="p-6">
                             <p class="mb-2 text-sm text-[#64748B] dark:text-[#94A3B8]">{{ article.date }}</p>

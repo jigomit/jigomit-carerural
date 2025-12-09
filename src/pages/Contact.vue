@@ -395,7 +395,7 @@ const faqs = [
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-[#0F172A] dark:text-white">{{ office.name }}</h4>
+                                        <h3 class="font-semibold text-[#0F172A] dark:text-white">{{ office.name }}</h3>
                                         <p class="text-sm text-[#475569] dark:text-[#94A3B8]">{{ office.address }}</p>
                                         <p class="text-sm text-[#0EA5E9]">{{ office.phone }}</p>
                                     </div>

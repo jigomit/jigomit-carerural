@@ -17,8 +17,12 @@ export default defineConfig({
         outDir: 'dist',
         cssCodeSplit: true,
         cssMinify: true,
+        minify: 'esbuild',
         rollupOptions: {
             output: {
+                manualChunks: {
+                    'vendor-vue': ['vue', 'vue-router'],
+                },
                 assetFileNames: (assetInfo) => {
                     if (assetInfo.name?.endsWith('.css')) {
                         return 'assets/css/[name]-[hash][extname]';
@@ -27,5 +31,6 @@ export default defineConfig({
                 },
             },
         },
+        chunkSizeWarningLimit: 1000,
     },
 });
