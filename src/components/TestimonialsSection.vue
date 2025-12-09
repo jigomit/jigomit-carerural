@@ -132,6 +132,9 @@ onUnmounted(() => {
                                             :src="testimonials[currentSlide].avatar"
                                             :alt="testimonials[currentSlide].name"
                                             class="h-full w-full rounded-full object-cover"
+                                            width="128"
+                                            height="128"
+                                            loading="lazy"
                                         />
                                     </div>
                                 </div>
@@ -207,7 +210,7 @@ onUnmounted(() => {
                 >
                     <div class="mb-4 flex items-center gap-4">
                         <div class="relative h-14 w-14 overflow-hidden rounded-full">
-                            <img :src="testimonial.avatar" :alt="testimonial.name" class="h-full w-full object-cover transition-transform group-hover:scale-110" />
+                            <img :src="testimonial.avatar" :alt="testimonial.name" class="h-full w-full object-cover transition-transform group-hover:scale-110" width="64" height="64" loading="lazy" />
                         </div>
                         <div>
                             <h5 class="font-bold text-[#0F172A]">{{ testimonial.name }}</h5>

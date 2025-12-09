@@ -101,6 +101,10 @@ onMounted(() => {
                             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                             alt="Medical professionals helping rural patients"
                             class="img-cover aspect-[4/3] w-full max-w-lg"
+                            width="800"
+                            height="600"
+                            fetchpriority="high"
+                            loading="eager"
                         />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/30 to-transparent"></div>
                     </div>

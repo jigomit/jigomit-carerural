@@ -46,6 +46,33 @@ body {
     overflow-x: hidden;
 }
 
+/* Prevent layout shifts - Add aspect ratio to images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent layout shifts for images without dimensions */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Reserve space for images to prevent CLS - default aspect ratio */
+img:not([width]):not([height]):not([style*="aspect-ratio"]) {
+    aspect-ratio: 16 / 9;
+}
+
+/* Ensure images maintain aspect ratio to prevent CLS */
+img[style*="aspect-ratio"] {
+    /* Aspect ratio handled by inline style */
+}
+
+/* Prevent font-related layout shifts */
+@font-face {
+    font-display: swap;
+}
+
 /* Modern scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

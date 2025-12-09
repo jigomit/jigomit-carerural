@@ -211,6 +211,8 @@ onMounted(() => {
                                     class="h-full w-full object-cover"
                                     fetchpriority="high"
                                     loading="eager"
+                                    width="800"
+                                    height="600"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[#0F172A]/60 via-transparent to-transparent"></div>
                             </div>
@@ -410,12 +412,18 @@ onMounted(() => {
                                     alt="Medical camp"
                                     class="h-48 w-full rounded-2xl object-cover object-center shadow-lg"
                                     loading="lazy"
+                                    width="1170"
+                                    height="192"
+                                    style="aspect-ratio: 1170/192;"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80"
                                     alt="Doctor consultation"
                                     class="h-64 w-full rounded-2xl object-cover shadow-lg"
                                     loading="lazy"
+                                    width="400"
+                                    height="256"
+                                    style="aspect-ratio: 400/256;"
                                 />
                             </div>
                             <div class="space-y-4 pt-8">
@@ -424,12 +432,18 @@ onMounted(() => {
                                     alt="Healthcare worker"
                                     class="h-64 w-full rounded-2xl object-cover shadow-lg"
                                     loading="lazy"
+                                    width="400"
+                                    height="256"
+                                    style="aspect-ratio: 400/256;"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80"
                                     alt="Community health"
                                     class="h-48 w-full rounded-2xl object-cover shadow-lg"
                                     loading="lazy"
+                                    width="400"
+                                    height="192"
+                                    style="aspect-ratio: 400/192;"
                                 />
                             </div>
                         </div>
@@ -520,8 +534,8 @@ onMounted(() => {
                         :key="article.title"
                         class="card-modern group overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl"
                     >
-                        <div class="relative h-48 overflow-hidden">
-                            <img :src="article.image" :alt="article.title" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                        <div class="relative h-48 overflow-hidden" style="aspect-ratio: 16/9;">
+                            <img :src="article.image" :alt="article.title" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" width="400" height="225" style="aspect-ratio: 16/9;" />
                         </div>
                         <div class="p-6">
                             <p class="mb-2 text-sm text-[#64748B] dark:text-[#94A3B8]">{{ article.date }}</p>
