@@ -19,6 +19,9 @@ const navLinks = [
     { name: 'Contact', href: '/contact' },
 ];
 
+// Desktop nav links (without Blog)
+const desktopNavLinks = navLinks.filter(link => link.name !== 'Blog');
+
 function handleScroll(): void {
     isScrolled.value = window.scrollY > 50;
 }
@@ -108,7 +111,7 @@ const socialLinks = [
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex lg:items-center lg:gap-1">
                         <router-link
-                            v-for="link in navLinks"
+                            v-for="link in desktopNavLinks"
                             :key="link.name"
                             :to="link.href"
                             :class="[
