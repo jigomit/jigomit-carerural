@@ -18,6 +18,8 @@ export default defineConfig({
         cssCodeSplit: true,
         cssMinify: true,
         minify: 'esbuild',
+        target: 'esnext',
+        assetsInlineLimit: 4096,
         rollupOptions: {
             output: {
                 manualChunks: {
@@ -32,5 +34,10 @@ export default defineConfig({
             },
         },
         chunkSizeWarningLimit: 1000,
+    },
+    server: {
+        headers: {
+            'Cache-Control': 'public, max-age=31536000, immutable',
+        },
     },
 });

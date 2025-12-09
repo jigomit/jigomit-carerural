@@ -261,15 +261,15 @@ const socialLinks = [
         </main>
 
         <!-- Footer -->
-        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]" style="min-height: 600px;">
+        <footer class="relative overflow-hidden bg-[#0F172A] dark:bg-[#0F172A] bg-[#F8FAFC]" style="height: 600px; min-height: 600px; contain: layout style paint;">
             <!-- Background decoration -->
-            <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden" style="contain: layout;">
                 <div class="absolute top-0 left-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#0EA5E9]/5 dark:bg-[#0EA5E9]/5 bg-[#0EA5E9]/10 blur-3xl"></div>
                 <div class="absolute bottom-0 right-1/4 h-48 w-48 sm:h-96 sm:w-96 rounded-full bg-[#8B5CF6]/5 dark:bg-[#8B5CF6]/5 bg-[#8B5CF6]/10 blur-3xl"></div>
             </div>
 
             <!-- Main Footer -->
-            <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20" style="contain: layout;">
                 <div class="grid gap-12 lg:grid-cols-4">
                     <!-- Brand Column -->
                     <div class="lg:col-span-1">

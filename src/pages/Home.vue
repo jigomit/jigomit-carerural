@@ -204,7 +204,7 @@ onMounted(() => {
                     <div class="relative animate-fade-in" style="animation-delay: 300ms;">
                         <div class="relative">
                             <!-- Main image -->
-                            <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent">
+                            <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent" style="aspect-ratio: 4/3; contain: layout;">
                                 <img
                                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                                     alt="Healthcare workers helping rural community"
@@ -213,12 +213,14 @@ onMounted(() => {
                                     loading="eager"
                                     width="800"
                                     height="600"
+                                    decoding="sync"
+                                    style="aspect-ratio: 4/3;"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[#0F172A]/60 via-transparent to-transparent"></div>
                             </div>
 
                             <!-- Floating stats card -->
-                            <div class="absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 animate-float rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
+                            <div class="absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="will-change: transform; transform: translateZ(0); contain: layout style paint;">
                                 <div class="flex items-center gap-2 sm:gap-3">
                                     <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
                                         <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,7 +235,7 @@ onMounted(() => {
                             </div>
 
                             <!-- Floating badge -->
-                            <div class="absolute top-2 right-2 sm:-top-4 sm:-right-4 animate-float rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s;">
+                            <div class="absolute top-2 right-2 sm:-top-4 sm:-right-4 rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s; will-change: transform; transform: translateZ(0); contain: layout style paint;">
                                 <div class="flex items-center gap-2 sm:gap-3">
                                     <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
                                         <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
