@@ -71,7 +71,7 @@ const socialLinks = [
 </script>
 
 <template>
-    <div :class="['min-h-screen flex flex-col transition-colors duration-300', isDark ? 'dark bg-[#0F172A]' : 'bg-white']">
+    <div :class="['min-h-screen flex flex-col transition-colors duration-300', isDark ? 'dark bg-[#0F172A]' : 'bg-white']" style="min-height: calc(100vh + 600px);">
         <!-- Navigation -->
         <header
             :class="[
