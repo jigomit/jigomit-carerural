@@ -78,6 +78,16 @@ section, footer, header, main {
     contain: layout style;
 }
 
+/* Aggressive footer containment to prevent CLS */
+footer {
+    contain: strict !important;
+    content-visibility: auto;
+    will-change: contents;
+    height: 600px !important;
+    min-height: 600px !important;
+    max-height: 600px !important;
+}
+
 /* Optimize animations to prevent layout shifts */
 /* Ensure floating elements don't cause layout shifts */
 .animate-float {
