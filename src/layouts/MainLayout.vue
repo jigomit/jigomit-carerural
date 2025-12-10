@@ -272,13 +272,13 @@ const socialLinks = [
             </div>
 
             <!-- Main Footer -->
-            <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20" style="contain: layout; height: 100%;">
+            <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20" style="contain: layout; height: 100%;">
                 <div class="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="contain: layout;">
                     <!-- Brand Column -->
                     <div class="sm:col-span-2 lg:col-span-1" style="contain: layout;">
-                        <router-link to="/" class="group mb-6 flex items-center gap-3" style="min-height: 48px; contain: layout;">
-                            <div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] shadow-lg transition-transform group-hover:scale-110">
-                                <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <router-link to="/" class="group mb-4 sm:mb-6 flex items-center gap-3" style="min-height: 48px; contain: layout;">
+                            <div class="relative flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] shadow-lg transition-transform group-hover:scale-110">
+                                <svg class="h-6 w-6 sm:h-7 sm:w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M19 8h-3V5a1 1 0 00-1-1h-6a1 1 0 00-1 1v3H5a1 1 0 00-1 1v6a1 1 0 001 1h3v3a1 1 0 001 1h6a1 1 0 001-1v-3h3a1 1 0 001-1V9a1 1 0 00-1-1z" />
                                 </svg>
                                 <span class="absolute -top-1 -right-1 flex h-3 w-3">
@@ -287,16 +287,16 @@ const socialLinks = [
                                 </span>
                             </div>
                             <div class="min-w-0">
-                                <span class="text-xl font-bold text-[#0F172A] dark:text-white">Rural<span class="text-[#10B981]">Care</span></span>
-                                <span class="block text-[10px] font-medium tracking-wider text-[#64748B]">HEALTHCARE FOR ALL</span>
+                                <span class="text-lg sm:text-xl font-bold text-[#0F172A] dark:text-white">Rural<span class="text-[#10B981]">Care</span></span>
+                                <span class="block text-[9px] sm:text-[10px] font-medium tracking-wider text-[#64748B] dark:text-[#94A3B8]">HEALTHCARE FOR ALL</span>
                             </div>
                         </router-link>
-                        <p class="mb-8 text-[#475569] dark:text-[#94A3B8]">
+                        <p class="mb-6 sm:mb-8 text-sm sm:text-base text-[#475569] dark:text-[#94A3B8] leading-relaxed">
                             Bridging the healthcare gap in rural communities through accessible, affordable, and quality medical services since 2008.
                         </p>
 
                         <!-- Social Links -->
-                        <div class="flex gap-3">
+                        <div class="flex gap-2 sm:gap-3 flex-wrap">
                             <a
                                 v-for="social in socialLinks"
                                 :key="social.name"
@@ -340,10 +340,10 @@ const socialLinks = [
 
                     <!-- Our Services -->
                     <div>
-                        <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Our Services</h3>
-                        <ul class="space-y-4">
+                        <h3 class="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-[#0F172A] dark:text-white">Our Services</h3>
+                        <ul class="space-y-3 sm:space-y-4">
                             <li v-for="service in services" :key="service.name">
-                                <router-link :to="service.href" class="group flex items-center gap-2 text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">
+                                <router-link :to="service.href" class="group flex items-center gap-2 text-sm sm:text-base text-[#475569] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">
                                     <span class="h-1.5 w-1.5 rounded-full bg-[#10B981] opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     {{ service.name }}
                                 </router-link>
@@ -387,15 +387,15 @@ const socialLinks = [
 
             <!-- Bottom Bar -->
             <div class="absolute bottom-0 left-0 right-0 border-t border-white/10 dark:border-white/10 border-[#E2E8F0]" style="contain: layout;">
-                <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8" style="contain: layout;">
-                    <div class="flex flex-col items-center justify-between gap-4 md:flex-row" style="contain: layout;">
-                        <p class="text-sm text-[#64748B]" style="contain: layout;">
+                <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6 lg:px-8" style="contain: layout;">
+                    <div class="flex flex-col items-center justify-center gap-3 sm:gap-4 md:flex-row md:justify-between" style="contain: layout;">
+                        <p class="text-xs sm:text-sm text-center md:text-left text-[#64748B] dark:text-[#94A3B8]" style="contain: layout;">
                             &copy; {{ currentYear }} CareRural Foundation. All rights reserved. | 501(c)(3) Non-Profit Organization
                         </p>
-                        <div class="flex gap-6" style="contain: layout;">
-                            <a href="#" class="text-sm text-[#64748B] transition-colors hover:text-[#0F172A] dark:hover:text-white">Privacy Policy</a>
-                            <a href="#" class="text-sm text-[#64748B] transition-colors hover:text-[#0F172A] dark:hover:text-white">Terms of Service</a>
-                            <a href="#" class="text-sm text-[#64748B] transition-colors hover:text-[#0F172A] dark:hover:text-white">Cookie Policy</a>
+                        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6" style="contain: layout;">
+                            <a href="#" class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">Privacy Policy</a>
+                            <a href="#" class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">Terms of Service</a>
+                            <a href="#" class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8] transition-colors hover:text-[#0F172A] dark:hover:text-white">Cookie Policy</a>
                         </div>
                     </div>
                 </div>
