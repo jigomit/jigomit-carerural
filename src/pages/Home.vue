@@ -134,7 +134,7 @@ onMounted(() => {
     
     
         <!-- Hero Section -->
-        <section class="relative min-h-[600px] sm:min-h-[700px] lg:min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] flex items-center">
+        <section class="relative min-h-[500px] sm:min-h-[650px] lg:min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] flex items-center">
             <!-- Animated Background -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="blob absolute -top-20 -left-20 sm:-top-40 sm:-left-40 h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
@@ -145,40 +145,40 @@ onMounted(() => {
             <!-- Grid pattern overlay -->
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwIDEgMSAwIDEgMCAtMiAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-40"></div>
 
-            <div class="relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-                <div class="grid items-center gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2">
+            <div class="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+                <div class="grid items-center gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-2">
                     <!-- Content -->
                     <div class="animate-fade-in text-center lg:text-left order-2 lg:order-1">
-                        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 dark:bg-white/10 px-4 py-2 backdrop-blur-sm border border-[#10B981]/20 dark:border-transparent">
+                        <div class="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 dark:bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 backdrop-blur-sm border border-[#10B981]/20 dark:border-transparent">
                             <span class="relative flex h-2 w-2">
                                 <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#10B981] opacity-75"></span>
                                 <span class="relative inline-flex h-2 w-2 rounded-full bg-[#10B981]"></span>
                             </span>
-                            <span class="text-sm font-medium text-[#0F172A] dark:text-white/90">Serving 350+ rural communities</span>
+                            <span class="text-xs sm:text-sm font-medium text-[#0F172A] dark:text-white/90">Serving 350+ rural communities</span>
                         </div>
 
-                        <h1 class="mb-6 text-4xl font-bold leading-tight text-[#0F172A] dark:text-white sm:text-5xl lg:text-6xl">
+                        <h1 class="mb-4 sm:mb-6 text-3xl sm:text-4xl font-bold leading-tight text-[#0F172A] dark:text-white sm:text-5xl lg:text-6xl">
                             Bringing <span class="gradient-text">Quality Healthcare</span> to Every Village
                         </h1>
 
-                        <p class="mb-8 text-lg text-[#475569] dark:text-white/70 sm:text-xl">
+                        <p class="mb-6 sm:mb-8 text-base sm:text-lg text-[#475569] dark:text-white/70 sm:text-xl">
                             We are on a mission to eliminate healthcare disparities in rural areas. Through mobile clinics, affordable medicines, and dedicated medical professionals, we ensure no one is left behind.
                         </p>
 
-                        <div class="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
-                            <router-link to="/donate" class="btn-primary text-center">
+                        <div class="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                            <router-link to="/donate" class="btn-primary text-center text-sm sm:text-base">
                                 Donate Now
-                                <svg class="ml-2 inline h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="ml-2 inline h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </router-link>
-                            <router-link to="/about" class="btn-secondary">
+                            <router-link to="/about" class="btn-secondary text-sm sm:text-base">
                                 Learn Our Story
                             </router-link>
                         </div>
 
                         <!-- Trust indicators -->
-                        <div class="mt-12 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
+                        <div class="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:justify-start">
                             <div class="flex items-center gap-2">
                                 <svg class="h-5 w-5 text-[#10B981]" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -202,9 +202,9 @@ onMounted(() => {
 
                     <!-- Hero Image -->
                     <div class="relative animate-fade-in order-1 lg:order-2" style="animation-delay: 300ms;">
-                        <div class="relative">
+                        <div class="relative w-full">
                             <!-- Main image -->
-                            <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent" style="aspect-ratio: 4/3; contain: layout; min-height: 400px; max-height: 600px;">
+                            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl ring-2 sm:ring-4 ring-white/50 dark:ring-transparent w-full min-h-[280px] sm:min-h-[400px] max-h-[400px] sm:max-h-[600px]" style="aspect-ratio: 4/3; contain: layout;">
                                 <img
                                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                                     alt="Healthcare workers helping rural community"
@@ -221,31 +221,31 @@ onMounted(() => {
                             </div>
 
                             <!-- Floating stats card -->
-                            <div class="absolute bottom-2 left-2 sm:-bottom-6 sm:-left-6 rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="will-change: transform; transform: translateZ(0); contain: layout style paint;">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
-                                        <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute bottom-1 left-1 sm:bottom-2 sm:left-2 lg:-bottom-6 lg:-left-6 rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-xl bg-white/80 dark:bg-[#1E293B]/80 backdrop-blur-xl border border-white/30 dark:border-transparent" style="will-change: transform; transform: translateZ(0); contain: layout style paint;">
+                                <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
+                                    <div class="flex h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
+                                        <svg class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white">98%</p>
-                                        <p class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8]">Treatment Success</p>
+                                        <p class="text-base sm:text-xl lg:text-2xl font-bold text-[#0F172A] dark:text-white">98%</p>
+                                        <p class="text-[10px] sm:text-xs lg:text-sm text-[#64748B] dark:text-[#94A3B8]">Treatment Success</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Floating badge -->
-                            <div class="absolute top-2 right-2 sm:-top-4 sm:-right-4 rounded-2xl p-3 sm:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s; will-change: transform; transform: translateZ(0); contain: layout style paint;">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
-                                        <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-1 right-1 sm:top-2 sm:right-2 lg:-top-4 lg:-right-4 rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-xl bg-white/80 dark:bg-[#1E293B]/80 backdrop-blur-xl border border-white/30 dark:border-transparent" style="animation-delay: 1s; will-change: transform; transform: translateZ(0); contain: layout style paint;">
+                                <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
+                                    <div class="flex h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
+                                        <svg class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white">75K+</p>
-                                        <p class="text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8]">Lives Changed</p>
+                                        <p class="text-base sm:text-xl lg:text-2xl font-bold text-[#0F172A] dark:text-white">75K+</p>
+                                        <p class="text-[10px] sm:text-xs lg:text-sm text-[#64748B] dark:text-[#94A3B8]">Lives Changed</p>
                                     </div>
                                 </div>
                             </div>
