@@ -326,7 +326,7 @@ const socialLinks = [
                     </div>
 
                     <!-- Quick Links -->
-                    <div>
+                    <div class="hidden sm:block">
                         <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Quick Links</h3>
                         <ul class="space-y-4">
                             <li v-for="link in quickLinks" :key="link.name">
