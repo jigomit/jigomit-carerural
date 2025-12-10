@@ -490,7 +490,18 @@ onMounted(() => {
                         </div>
                         <p class="mb-6 text-lg text-[#475569] dark:text-[#CBD5E1]">"{{ testimonial.quote }}"</p>
                         <div class="flex items-center gap-4">
-                            <img :src="testimonial.image" :alt="testimonial.name" class="h-14 w-14 rounded-full object-cover" loading="lazy" />
+                            <div class="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                                <img 
+                                    :src="testimonial.image" 
+                                    :alt="testimonial.name" 
+                                    class="h-full w-full object-cover object-center" 
+                                    loading="lazy"
+                                    width="56"
+                                    height="56"
+                                    style="aspect-ratio: 1/1; display: block;"
+                                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'56\' height=\'56\'%3E%3Crect fill=\'%23E2E8F0\' width=\'56\' height=\'56\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23475569\' font-family=\'sans-serif\' font-size=\'12\'%3EAvatar%3C/text%3E%3C/svg%3E';"
+                                />
+                            </div>
                             <div>
                                 <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
                                 <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ testimonial.role }}</p>
