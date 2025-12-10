@@ -481,7 +481,7 @@ onMounted(() => {
                     <div
                         v-for="testimonial in testimonials"
                         :key="testimonial.name"
-                        class="card-modern p-8"
+                        class="card-modern p-8 bg-white dark:bg-[#1E293B]"
                     >
                         <div class="mb-6 flex gap-1">
                             <svg v-for="i in 5" :key="i" class="h-5 w-5 text-[#F59E0B]" fill="currentColor" viewBox="0 0 20 20">

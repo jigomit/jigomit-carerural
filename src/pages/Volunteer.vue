@@ -471,16 +471,16 @@ function handleSubmit(event: Event): void {
         </section>
 
         <!-- Benefits -->
-        <section class="py-24 lg:py-32">
+        <section class="py-24 lg:py-32 bg-white dark:bg-[#0F172A]">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid items-center gap-16 lg:grid-cols-2">
                     <div>
-                        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 px-4 py-2">
+                        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 dark:bg-[#10B981]/20 px-4 py-2">
                             <div class="h-1.5 w-1.5 rounded-full bg-[#10B981]"></div>
                             <span class="text-sm font-semibold text-[#10B981]">Benefits</span>
                         </div>
-                        <h2 class="mb-6 text-3xl font-bold text-[#0F172A]">Why Volunteer With Us?</h2>
-                        <p class="mb-8 text-lg text-[#475569]">
+                        <h2 class="mb-6 text-3xl font-bold text-[#0F172A] dark:text-white">Why Volunteer With Us?</h2>
+                        <p class="mb-8 text-lg text-[#475569] dark:text-[#CBD5E1]">
                             Volunteering with CareRural is more than just giving time - it is an investment in communities, in yourself, and in a healthier future for all.
                         </p>
 
@@ -490,12 +490,12 @@ function handleSubmit(event: Event): void {
                                 :key="benefit"
                                 class="flex items-center gap-3"
                             >
-                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#10B981]/10">
+                                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#10B981]/10 dark:bg-[#10B981]/20">
                                     <svg class="h-4 w-4 text-[#10B981]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                <span class="text-[#475569]">{{ benefit }}</span>
+                                <span class="text-[#475569] dark:text-[#CBD5E1]">{{ benefit }}</span>
                             </div>
                         </div>
                     </div>
@@ -504,19 +504,19 @@ function handleSubmit(event: Event): void {
                         <div
                             v-for="testimonial in testimonials"
                             :key="testimonial.name"
-                            class="card-modern p-6"
+                            class="card-modern p-6 bg-white dark:bg-[#1E293B]"
                         >
                             <div class="mb-4 flex gap-1">
                                 <svg v-for="i in 5" :key="i" class="h-5 w-5 text-[#F59E0B]" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                             </div>
-                            <p class="mb-4 text-[#475569]">"{{ testimonial.quote }}"</p>
+                            <p class="mb-4 text-[#475569] dark:text-[#CBD5E1]">"{{ testimonial.quote }}"</p>
                             <div class="flex items-center gap-3">
                                 <img :src="testimonial.image" :alt="testimonial.name" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
                                 <div>
-                                    <p class="font-bold text-[#0F172A]">{{ testimonial.name }}</p>
-                                    <p class="text-sm text-[#64748B]">{{ testimonial.role }}</p>
+                                    <p class="font-bold text-[#0F172A] dark:text-white">{{ testimonial.name }}</p>
+                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ testimonial.role }}</p>
                                 </div>
                             </div>
                         </div>
