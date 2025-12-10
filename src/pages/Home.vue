@@ -204,7 +204,7 @@ onMounted(() => {
                     <div class="relative animate-fade-in order-1 lg:order-2" style="animation-delay: 300ms;">
                         <div class="relative">
                             <!-- Main image -->
-                            <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent" style="aspect-ratio: 4/3; contain: layout; min-height: 300px;">
+                            <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent" style="aspect-ratio: 4/3; contain: layout; min-height: 400px; max-height: 600px;">
                                 <img
                                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                                     alt="Healthcare workers helping rural community"

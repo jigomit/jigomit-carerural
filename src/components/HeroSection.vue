@@ -96,7 +96,7 @@ onMounted(() => {
             <div class="mt-12 flex-1 lg:mt-0 lg:pl-12" :class="[isLoaded ? 'animate-fade-in-right' : 'opacity-0']">
                 <div class="relative">
                     <!-- Main image -->
-                    <div class="relative overflow-hidden rounded-3xl shadow-2xl" style="aspect-ratio: 4/3; min-height: 300px;">
+                    <div class="relative overflow-hidden rounded-3xl shadow-2xl" style="aspect-ratio: 4/3; min-height: 400px; max-height: 600px;">
                         <img
                             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                             alt="Medical professionals helping rural patients"
