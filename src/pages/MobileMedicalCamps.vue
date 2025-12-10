@@ -239,17 +239,17 @@ onMounted(() => {
                             class="h-full w-full rounded-3xl object-cover object-center shadow-2xl"
                         />
                         <!-- Badge -->
-                        <div class="absolute -bottom-6 -left-6 animate-float rounded-2xl p-6 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
-                            <div class="flex items-center gap-4">
-                                <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7]">
-                                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="absolute bottom-2 sm:bottom-4 md:-bottom-6 left-2 sm:left-4 md:-left-6 animate-float rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
+                            <div class="flex items-center gap-2 sm:gap-3 md:gap-4">
+                                <div class="flex h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex-shrink-0">
+                                    <svg class="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
                                     </svg>
                                 </div>
-                                <div>
-                                    <p class="text-3xl font-bold text-[#0F172A] dark:text-white">15</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Mobile Units Active</p>
+                                <div class="min-w-0">
+                                    <p class="text-xl sm:text-2xl md:text-3xl font-bold text-[#0F172A] dark:text-white leading-tight">15</p>
+                                    <p class="text-[10px] sm:text-xs md:text-sm text-[#64748B] dark:text-[#94A3B8] leading-tight whitespace-nowrap">Mobile Units Active</p>
                                 </div>
                             </div>
                         </div>
