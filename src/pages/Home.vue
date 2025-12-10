@@ -134,7 +134,7 @@ onMounted(() => {
     
     
         <!-- Hero Section -->
-        <section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A]">
+        <section class="relative min-h-[600px] sm:min-h-[700px] lg:min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] flex items-center">
             <!-- Animated Background -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="blob absolute -top-20 -left-20 sm:-top-40 sm:-left-40 h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
@@ -145,10 +145,10 @@ onMounted(() => {
             <!-- Grid pattern overlay -->
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwIDEgMSAwIDEgMCAtMiAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-40"></div>
 
-            <div class="relative mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
-                <div class="grid items-center gap-12 lg:grid-cols-2">
+            <div class="relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+                <div class="grid items-center gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2">
                     <!-- Content -->
-                    <div class="animate-fade-in text-center lg:text-left">
+                    <div class="animate-fade-in text-center lg:text-left order-2 lg:order-1">
                         <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 dark:bg-white/10 px-4 py-2 backdrop-blur-sm border border-[#10B981]/20 dark:border-transparent">
                             <span class="relative flex h-2 w-2">
                                 <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#10B981] opacity-75"></span>
@@ -201,7 +201,7 @@ onMounted(() => {
                     </div>
 
                     <!-- Hero Image -->
-                    <div class="relative animate-fade-in" style="animation-delay: 300ms;">
+                    <div class="relative animate-fade-in order-1 lg:order-2" style="animation-delay: 300ms;">
                         <div class="relative">
                             <!-- Main image -->
                             <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent" style="aspect-ratio: 4/3; contain: layout; min-height: 300px;">
