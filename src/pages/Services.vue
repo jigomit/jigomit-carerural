@@ -238,13 +238,15 @@ function setActiveService(index: number): void {
                 <div class="card-modern overflow-hidden shadow-2xl">
                     <div class="grid lg:grid-cols-2 lg:items-stretch">
                         <!-- Image -->
-                        <div class="relative h-64 sm:h-80 lg:h-full min-h-[400px] lg:min-h-0">
-                            <img
-                                :src="services[activeService].image"
-                                :alt="services[activeService].title"
-                                class="h-full w-full object-cover"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/60 to-transparent"></div>
+                        <div class="relative flex items-center h-64 sm:h-80 lg:h-full min-h-[400px] lg:min-h-0 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
+                            <div class="relative w-full h-full overflow-hidden rounded-l-3xl lg:rounded-l-3xl">
+                                <img
+                                    :src="services[activeService].image"
+                                    :alt="services[activeService].title"
+                                    class="h-full w-full object-cover"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/60 to-transparent"></div>
+                            </div>
                         </div>
 
                         <!-- Content -->
