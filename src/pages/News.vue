@@ -439,15 +439,14 @@ function closeFullArticle(): void {
         <!-- Full Article Modal -->
         <div
             v-if="showFullArticle && selectedArticle"
-            class="fixed inset-0 z-50 overflow-y-auto"
+            class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 lg:p-8"
         >
             <!-- Backdrop -->
-            <div class="fixed inset-0 bg-[#0F172A]/80 backdrop-blur-sm"></div>
+            <div class="fixed inset-0 bg-[#0F172A]/80 backdrop-blur-sm" @click="closeFullArticle"></div>
             
             <!-- Modal Content -->
-            <div class="relative min-h-screen px-4 py-12 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-4xl">
-                    <article class="card-modern bg-white dark:bg-[#1E293B] overflow-hidden relative">
+            <div class="relative w-full max-w-4xl my-auto">
+                <article class="card-modern bg-white dark:bg-[#1E293B] overflow-hidden relative max-h-[90vh] overflow-y-auto">
                         <!-- Close Button -->
                         <button
                             @click="closeFullArticle"
@@ -493,7 +492,6 @@ function closeFullArticle(): void {
 
                         </div>
                     </article>
-                </div>
             </div>
         </div>
     
