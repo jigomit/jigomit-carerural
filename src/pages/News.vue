@@ -4,8 +4,6 @@ import { ref } from 'vue';
 
 
 const activeCategory = ref('all');
-const selectedArticle = ref<any>(null);
-const showFullArticle = ref(false);
 
 const categories = [
     { id: 'all', label: 'All News' },
@@ -209,18 +207,6 @@ function getCategoryColor(category: string): string {
     };
     return colors[category] || 'bg-[#64748B]/10 text-[#64748B]';
 }
-
-function openFullArticle(article: any): void {
-    selectedArticle.value = article;
-    showFullArticle.value = true;
-    document.body.style.overflow = 'hidden';
-}
-
-function closeFullArticle(): void {
-    showFullArticle.value = false;
-    selectedArticle.value = null;
-    document.body.style.overflow = '';
-}
 </script>
 
 <template>
@@ -274,12 +260,6 @@ function closeFullArticle(): void {
                                 {{ featuredArticle.title }}
                             </h2>
                             <p class="mb-6 text-lg text-[#475569] dark:text-[#94A3B8]">{{ featuredArticle.excerpt }}</p>
-                            <button @click="openFullArticle(featuredArticle)" class="inline-flex items-center gap-2 font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
-                                Read Full Article
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -335,12 +315,6 @@ function closeFullArticle(): void {
                                 {{ article.title }}
                             </h3>
                             <p class="mb-4 text-[#475569] dark:text-[#94A3B8]">{{ article.excerpt }}</p>
-                            <button @click="openFullArticle(article)" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
-                                Read More
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </button>
                         </div>
                     </article>
                 </div>
@@ -435,64 +409,5 @@ function closeFullArticle(): void {
                 </div>
             </div>
         </section>
-
-        <!-- Full Article Modal -->
-        <div
-            v-if="showFullArticle && selectedArticle"
-            class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 lg:p-8"
-        >
-            <!-- Backdrop -->
-            <div class="fixed inset-0 bg-[#0F172A]/80 backdrop-blur-sm" @click="closeFullArticle"></div>
-            
-            <!-- Modal Content -->
-            <div class="relative w-full max-w-4xl my-auto">
-                <article class="card-modern bg-white dark:bg-[#1E293B] overflow-hidden relative max-h-[90vh] overflow-y-auto">
-                        <!-- Close Button -->
-                        <button
-                            @click="closeFullArticle"
-                            class="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 dark:bg-[#334155] text-[#0F172A] dark:text-white transition-colors hover:bg-white dark:hover:bg-[#475569] shadow-lg"
-                        >
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-
-                        <!-- Article Image -->
-                        <div class="relative h-64 sm:h-96 overflow-hidden">
-                            <img
-                                :src="selectedArticle.image"
-                                :alt="selectedArticle.title"
-                                class="h-full w-full object-cover"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 to-transparent"></div>
-                            <div class="absolute bottom-6 left-6 right-6">
-                                <span :class="['inline-block rounded-full px-3 py-1 text-sm font-medium capitalize mb-3', getCategoryColor(selectedArticle.category)]">
-                                    {{ selectedArticle.category }}
-                                </span>
-                                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
-                                    {{ selectedArticle.title }}
-                                </h1>
-                                <div class="flex items-center gap-4 text-sm text-white/80">
-                                    <span>{{ selectedArticle.date }}</span>
-                                    <span>{{ selectedArticle.readTime }}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Article Content -->
-                        <div class="p-8 sm:p-12">
-                            <div class="prose prose-lg dark:prose-invert max-w-none">
-                                <p class="text-xl text-[#475569] dark:text-[#94A3B8] mb-6 leading-relaxed">
-                                    {{ selectedArticle.excerpt }}
-                                </p>
-                                <div class="text-[#475569] dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">
-                                    {{ selectedArticle.fullContent }}
-                                </div>
-                            </div>
-
-                        </div>
-                    </article>
-            </div>
-        </div>
     
 </template>
