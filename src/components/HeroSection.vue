@@ -96,17 +96,20 @@ onMounted(() => {
             <div class="mt-12 flex-1 lg:mt-0 lg:pl-12" :class="[isLoaded ? 'animate-fade-in-right' : 'opacity-0']">
                 <div class="relative">
                     <!-- Main image -->
-                    <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                    <div class="relative overflow-hidden rounded-3xl shadow-2xl" style="aspect-ratio: 4/3; min-height: 300px;">
                         <img
                             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                             alt="Medical professionals helping rural patients"
-                            class="img-cover aspect-[4/3] w-full max-w-lg"
+                            class="h-full w-full object-cover object-center"
                             width="800"
                             height="600"
                             fetchpriority="high"
                             loading="eager"
+                            decoding="sync"
+                            style="aspect-ratio: 4/3; display: block;"
+                            onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect fill=\'%23E0F2FE\' width=\'800\' height=\'600\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23475569\' font-family=\'sans-serif\' font-size=\'24\'%3EHealthcare Image%3C/text%3E%3C/svg%3E';"
                         />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/30 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/30 to-transparent pointer-events-none"></div>
                     </div>
 
                     <!-- Floating card 1 -->
