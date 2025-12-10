@@ -4,6 +4,8 @@ import { ref } from 'vue';
 
 
 const activeCategory = ref('all');
+const selectedArticle = ref<any>(null);
+const showFullArticle = ref(false);
 
 const categories = [
     { id: 'all', label: 'All News' },
@@ -207,6 +209,18 @@ function getCategoryColor(category: string): string {
     };
     return colors[category] || 'bg-[#64748B]/10 text-[#64748B]';
 }
+
+function openFullArticle(article: any): void {
+    selectedArticle.value = article;
+    showFullArticle.value = true;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFullArticle(): void {
+    showFullArticle.value = false;
+    selectedArticle.value = null;
+    document.body.style.overflow = '';
+}
 </script>
 
 <template>
@@ -260,6 +274,12 @@ function getCategoryColor(category: string): string {
                                 {{ featuredArticle.title }}
                             </h2>
                             <p class="mb-6 text-lg text-[#475569] dark:text-[#94A3B8]">{{ featuredArticle.excerpt }}</p>
+                            <button @click="openFullArticle(featuredArticle)" class="inline-flex items-center gap-2 font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
+                                Read Full Article
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -315,6 +335,12 @@ function getCategoryColor(category: string): string {
                                 {{ article.title }}
                             </h3>
                             <p class="mb-4 text-[#475569] dark:text-[#94A3B8]">{{ article.excerpt }}</p>
+                            <button @click="openFullArticle(article)" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
+                                Read More
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -409,5 +435,66 @@ function getCategoryColor(category: string): string {
                 </div>
             </div>
         </section>
+
+        <!-- Full Article Modal -->
+        <div
+            v-if="showFullArticle && selectedArticle"
+            class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8"
+            @click.self="closeFullArticle"
+        >
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-[#0F172A]/80 backdrop-blur-sm transition-opacity"></div>
+            
+            <!-- Modal Content -->
+            <div class="relative w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] my-auto overflow-hidden">
+                <article class="card-modern bg-white dark:bg-[#1E293B] overflow-y-auto max-h-[95vh] sm:max-h-[90vh] relative">
+                    <!-- Close Button -->
+                    <button
+                        @click="closeFullArticle"
+                        class="sticky top-0 right-0 z-20 ml-auto flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 dark:bg-[#334155] text-[#0F172A] dark:text-white transition-colors hover:bg-white dark:hover:bg-[#475569] shadow-lg mb-2 sm:mb-0"
+                        aria-label="Close modal"
+                    >
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Article Image -->
+                    <div class="relative h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
+                        <img
+                            :src="selectedArticle.image"
+                            :alt="selectedArticle.title"
+                            class="h-full w-full object-cover"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 to-transparent"></div>
+                        <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                            <span :class="['inline-block rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium capitalize mb-2 sm:mb-3', getCategoryColor(selectedArticle.category)]">
+                                {{ selectedArticle.category }}
+                            </span>
+                            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">
+                                {{ selectedArticle.title }}
+                            </h1>
+                            <div class="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-white/80">
+                                <span>{{ selectedArticle.date }}</span>
+                                <span>{{ selectedArticle.readTime }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Content -->
+                    <div class="p-4 sm:p-6 md:p-8 lg:p-12">
+                        <div class="prose prose-sm sm:prose-base md:prose-lg dark:prose-invert max-w-none">
+                            <p class="text-base sm:text-lg md:text-xl text-[#475569] dark:text-[#94A3B8] mb-4 sm:mb-6 leading-relaxed">
+                                {{ selectedArticle.excerpt }}
+                            </p>
+                            <div class="text-sm sm:text-base md:text-lg text-[#475569] dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">
+                                {{ selectedArticle.fullContent }}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
     
 </template>
