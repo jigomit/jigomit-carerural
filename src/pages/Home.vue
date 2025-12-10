@@ -452,9 +452,9 @@ onMounted(() => {
                         </div>
 
                         <!-- Experience badge -->
-                        <div class="absolute bottom-2 sm:-bottom-6 left-1/2 -translate-x-1/2 rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-4 sm:p-6 text-center shadow-xl max-w-[90%] sm:max-w-none">
-                            <p class="text-2xl sm:text-4xl font-bold text-white">15+</p>
-                            <p class="text-xs sm:text-sm text-white/80">Years of Excellence</p>
+                        <div class="absolute bottom-2 sm:-bottom-6 left-1/2 -translate-x-1/2 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-3 sm:p-4 md:p-6 text-center shadow-xl max-w-[85%] sm:max-w-none">
+                            <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">15+</p>
+                            <p class="text-[10px] sm:text-xs md:text-sm text-white/80 leading-tight">Years of Excellence</p>
                         </div>
                     </div>
                 </div>

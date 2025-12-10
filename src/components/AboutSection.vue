@@ -78,9 +78,9 @@ const features = [
                         </div>
 
                         <!-- Experience badge -->
-                        <div class="absolute -left-4 -bottom-4 rounded-2xl bg-gradient-to-br from-[#0EA5E9] to-[#8B5CF6] p-6 text-white shadow-xl lg:-left-8">
-                            <p class="text-5xl font-bold">15+</p>
-                            <p class="text-sm font-medium text-white/80">Years of Service</p>
+                        <div class="absolute left-2 sm:left-4 md:-left-4 bottom-2 sm:bottom-4 md:-bottom-4 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#0EA5E9] to-[#8B5CF6] p-3 sm:p-4 md:p-6 text-white shadow-xl lg:-left-8">
+                            <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">15+</p>
+                            <p class="text-[10px] sm:text-xs md:text-sm font-medium text-white/80 leading-tight">Years of Service</p>
                         </div>
 
                         <!-- Decorative elements -->

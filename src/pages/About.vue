@@ -242,9 +242,9 @@ const awards = [
                             alt="CareRural medical camp"
                             class="rounded-3xl shadow-2xl object-cover object-center"
                         />
-                        <div class="absolute -bottom-8 -left-8 rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-6 shadow-xl">
-                            <p class="text-4xl font-bold text-white">15+</p>
-                            <p class="text-white/80">Years of Service</p>
+                        <div class="absolute bottom-2 sm:bottom-4 md:-bottom-8 left-2 sm:left-4 md:-left-8 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] p-3 sm:p-4 md:p-6 shadow-xl">
+                            <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">15+</p>
+                            <p class="text-[10px] sm:text-xs md:text-sm text-white/80 leading-tight">Years of Service</p>
                         </div>
                     </div>
                 </div>
