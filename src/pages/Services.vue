@@ -236,9 +236,9 @@ function setActiveService(index: number): void {
         <section class="bg-[#F8FAFC] dark:bg-[#1E293B] py-24 lg:py-32">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="card-modern overflow-hidden shadow-2xl">
-                    <div class="grid lg:grid-cols-2">
+                    <div class="grid lg:grid-cols-2 lg:items-stretch">
                         <!-- Image -->
-                        <div class="relative h-64 lg:h-auto">
+                        <div class="relative h-64 sm:h-80 lg:h-full min-h-[400px] lg:min-h-0">
                             <img
                                 :src="services[activeService].image"
                                 :alt="services[activeService].title"
@@ -248,7 +248,7 @@ function setActiveService(index: number): void {
                         </div>
 
                         <!-- Content -->
-                        <div class="p-8 lg:p-12">
+                        <div class="p-8 lg:p-12 flex flex-col">
                             <div :class="['mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2', `bg-gradient-to-r ${services[activeService].gradient} bg-opacity-10`]">
                                 <span class="text-sm font-semibold text-white">Featured Service</span>
                             </div>
