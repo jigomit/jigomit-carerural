@@ -134,7 +134,7 @@ onMounted(() => {
     
     
         <!-- Hero Section -->
-        <section class="relative min-h-[600px] sm:min-h-[700px] lg:min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A]">
+        <section class="relative min-h-[600px] sm:min-h-[700px] lg:min-h-screen overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] pt-24 sm:pt-28 md:pt-32">
             <!-- Animated Background -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="blob absolute -top-20 -left-20 sm:-top-40 sm:-left-40 h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
