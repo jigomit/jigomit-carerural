@@ -244,16 +244,16 @@ onMounted(() => {
                             <div class="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[#0F172A]/60 via-transparent to-transparent"></div>
                         </div>
                         <!-- Savings badge -->
-                        <div class="absolute -bottom-6 -left-6 animate-float rounded-2xl p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
-                            <div class="flex items-center gap-3">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669]">
-                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="absolute bottom-2 sm:bottom-4 md:-bottom-6 left-2 sm:left-4 md:-left-6 animate-float rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
+                            <div class="flex items-center gap-2 sm:gap-3">
+                                <div class="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669] flex-shrink-0">
+                                    <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <div>
-                                    <p class="text-2xl font-bold text-[#0F172A] dark:text-white">Up to 80%</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Average Savings</p>
+                                <div class="min-w-0">
+                                    <p class="text-lg sm:text-xl md:text-2xl font-bold text-[#0F172A] dark:text-white leading-tight">Up to 80%</p>
+                                    <p class="text-[10px] sm:text-xs md:text-sm text-[#64748B] dark:text-[#94A3B8] leading-tight whitespace-nowrap">Average Savings</p>
                                 </div>
                             </div>
                         </div>
