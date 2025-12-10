@@ -106,6 +106,45 @@ const testimonials = [
 
 const filteredTestimonials = ref(testimonials);
 
+const impactStats = [
+    {
+        value: '75K+',
+        label: 'Patients Treated',
+        icon: 'users',
+        color: 'from-[#0EA5E9] to-[#0284C7]',
+    },
+    {
+        value: '350+',
+        label: 'Villages Reached',
+        icon: 'location',
+        color: 'from-[#10B981] to-[#059669]',
+    },
+    {
+        value: '200+',
+        label: 'Medical Professionals',
+        icon: 'doctor',
+        color: 'from-[#8B5CF6] to-[#7C3AED]',
+    },
+    {
+        value: '850+',
+        label: 'Medical Camps',
+        icon: 'camp',
+        color: 'from-[#F59E0B] to-[#D97706]',
+    },
+    {
+        value: '98%',
+        label: 'Patient Satisfaction',
+        icon: 'heart',
+        color: 'from-[#EC4899] to-[#DB2777]',
+    },
+    {
+        value: '45',
+        label: 'Rural Pharmacies',
+        icon: 'medicine',
+        color: 'from-[#06B6D4] to-[#0891B2]',
+    },
+];
+
 function filterByCategory(category: string): void {
     activeCategory.value = category;
     if (category === 'all') {
@@ -200,80 +239,60 @@ function filterByCategory(category: string): void {
             </div>
         </section>
 
-        <!-- Video Testimonials -->
+        <!-- Impact Statistics -->
         <section class="bg-[#F8FAFC] dark:bg-[#1E293B] py-24 lg:py-32">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto mb-16 max-w-3xl text-center">
+                    <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 px-4 py-2">
+                        <div class="h-1.5 w-1.5 rounded-full bg-[#0EA5E9]"></div>
+                        <span class="text-sm font-semibold text-[#0EA5E9]">Our Impact</span>
+                    </div>
                     <h2 class="mb-4 text-3xl font-bold text-[#0F172A] dark:text-white sm:text-4xl">
-                        Video Stories
+                        Numbers That <span class="gradient-text">Tell Our Story</span>
                     </h2>
                     <p class="text-lg text-[#475569] dark:text-[#94A3B8]">
-                        Watch the impact of our work through the eyes of those we serve.
+                        Behind every testimonial is a story of impact. These numbers represent lives changed, communities transformed, and hope restored.
                     </p>
                 </div>
 
-                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="card-modern group overflow-hidden">
-                        <div class="relative h-48 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80"
-                                alt="Video thumbnail"
-                                class="h-full w-full object-cover"
-                            />
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/50">
-                                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl">
-                                    <svg class="ml-1 h-6 w-6 text-[#0EA5E9]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        v-for="stat in impactStats"
+                        :key="stat.label"
+                        class="card-modern group p-6 transition-all hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-[#0F172A]"
+                    >
+                        <div :class="['mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg transition-transform group-hover:scale-110', stat.color]">
+                            <!-- Users Icon -->
+                            <svg v-if="stat.icon === 'users'" class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <!-- Location Icon -->
+                            <svg v-else-if="stat.icon === 'location'" class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <!-- Doctor Icon -->
+                            <svg v-else-if="stat.icon === 'doctor'" class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <!-- Camp Icon -->
+                            <svg v-else-if="stat.icon === 'camp'" class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                            </svg>
+                            <!-- Heart Icon -->
+                            <svg v-else-if="stat.icon === 'heart'" class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <!-- Medicine Icon -->
+                            <svg v-else class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
                         </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-[#0F172A] dark:text-white">A Village Transformed</h3>
-                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">3:45 min</p>
-                        </div>
-                    </div>
-
-                    <div class="card-modern group overflow-hidden">
-                        <div class="relative h-48 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80"
-                                alt="Video thumbnail"
-                                class="h-full w-full object-cover"
-                            />
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/50">
-                                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl">
-                                    <svg class="ml-1 h-6 w-6 text-[#0EA5E9]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-[#0F172A] dark:text-white">Mothers Journey to Safe Delivery</h3>
-                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">5:20 min</p>
-                        </div>
-                    </div>
-
-                    <div class="card-modern group overflow-hidden">
-                        <div class="relative h-48 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
-                                alt="Video thumbnail"
-                                class="h-full w-full object-cover"
-                            />
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/50">
-                                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl">
-                                    <svg class="ml-1 h-6 w-6 text-[#0EA5E9]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-[#0F172A] dark:text-white">Why I Volunteer</h3>
-                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">4:15 min</p>
-                        </div>
+                        <h3 class="mb-2 text-3xl font-bold text-[#0F172A] dark:text-white lg:text-4xl">
+                            {{ stat.value }}
+                        </h3>
+                        <p class="text-[#64748B] dark:text-[#94A3B8]">{{ stat.label }}</p>
                     </div>
                 </div>
             </div>
