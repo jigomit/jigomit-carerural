@@ -39,6 +39,12 @@ const routes: RouteRecordRaw[] = [
         meta: { title: 'News & Updates - CareRural | Latest Stories' },
     },
     {
+        path: '/news/:id',
+        name: 'article-detail',
+        component: () => import('@/pages/ArticleDetail.vue'),
+        meta: { title: 'Article - CareRural | News & Updates' },
+    },
+    {
         path: '/contact',
         name: 'contact',
         component: () => import('@/pages/Contact.vue'),

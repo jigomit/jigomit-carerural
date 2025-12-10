@@ -1,18 +1,11 @@
 <script setup lang="ts">
+import { ref, computed, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-import { ref } from 'vue';
+const route = useRoute();
+const router = useRouter();
 
-
-const activeCategory = ref('all');
-
-const categories = [
-    { id: 'all', label: 'All News' },
-    { id: 'updates', label: 'Updates' },
-    { id: 'stories', label: 'Impact Stories' },
-    { id: 'events', label: 'Events' },
-    { id: 'press', label: 'Press Releases' },
-];
-
+// Import articles data (same as News.vue)
 const featuredArticle = {
     id: 0,
     title: 'CareRural Expands to 350 Villages: A Milestone in Rural Healthcare',
@@ -187,16 +180,10 @@ Early detection and management of diabetes can prevent serious complications and
     },
 ];
 
-const filteredArticles = ref(articles);
+const allArticles = [featuredArticle, ...articles];
 
-function filterByCategory(category: string): void {
-    activeCategory.value = category;
-    if (category === 'all') {
-        filteredArticles.value = articles;
-    } else {
-        filteredArticles.value = articles.filter(a => a.category === category);
-    }
-}
+const articleId = computed(() => parseInt(route.params.id as string));
+const article = computed(() => allArticles.find(a => a.id === articleId.value));
 
 function getCategoryColor(category: string): string {
     const colors: Record<string, string> = {
@@ -207,219 +194,98 @@ function getCategoryColor(category: string): string {
     };
     return colors[category] || 'bg-[#64748B]/10 text-[#64748B]';
 }
+
+// Update document title when article changes
+watch(article, (newArticle) => {
+    if (newArticle) {
+        document.title = `${newArticle.title} - CareRural | News & Updates`;
+    }
+}, { immediate: true });
+
+// Redirect to news page if article not found
+if (!article.value) {
+    router.push('/news');
+}
 </script>
 
 <template>
-    
-    
-        <!-- Hero -->
-        <section class="relative overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] pt-32 pb-24">
+    <div v-if="article">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#F0FDF4] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] pt-32 pb-12 sm:pb-16">
             <div class="absolute inset-0">
                 <div class="blob absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#F59E0B]/10 dark:bg-[#F59E0B]/20 blur-3xl"></div>
                 <div class="blob absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 blur-3xl"></div>
             </div>
 
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#F59E0B]/10 dark:bg-white/10 px-4 py-2 backdrop-blur-sm border border-[#F59E0B]/20 dark:border-transparent">
-                        <div class="h-1.5 w-1.5 rounded-full bg-[#F59E0B]"></div>
-                        <span class="text-sm font-semibold text-[#F59E0B]">News & Updates</span>
-                    </div>
-                    <h1 class="mb-6 text-4xl font-bold text-[#0F172A] dark:text-white sm:text-5xl lg:text-6xl">
-                        Latest <span class="gradient-text">News & Stories</span>
+            <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <!-- Back Button -->
+                <router-link
+                    to="/news"
+                    class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#475569] dark:text-white/70 hover:text-[#0EA5E9] transition-colors"
+                >
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to News
+                </router-link>
+
+                <!-- Article Header -->
+                <div class="mb-6">
+                    <span :class="['inline-block rounded-full px-3 py-1 text-sm font-medium capitalize mb-4', getCategoryColor(article.category)]">
+                        {{ article.category }}
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white mb-4 leading-tight">
+                        {{ article.title }}
                     </h1>
-                    <p class="text-lg text-[#475569] dark:text-white/70">
-                        Stay updated with our latest initiatives, impact stories, events, and announcements from the field.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Article -->
-        <section class="relative -mt-16 z-10 pb-12 bg-white dark:bg-[#0F172A]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="card-modern group overflow-hidden">
-                    <div class="grid lg:grid-cols-2">
-                        <div class="relative h-64 lg:h-auto">
-                            <img
-                                :src="featuredArticle.image"
-                                :alt="featuredArticle.title"
-                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/60 to-transparent lg:hidden"></div>
-                        </div>
-                        <div class="p-8 lg:p-12">
-                            <div class="mb-4 flex items-center gap-4">
-                                <span :class="['rounded-full px-3 py-1 text-sm font-medium capitalize', getCategoryColor(featuredArticle.category)]">
-                                    Featured
-                                </span>
-                                <span class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ featuredArticle.date }}</span>
-                                <span class="text-sm text-[#64748B] dark:text-[#94A3B8]">{{ featuredArticle.readTime }}</span>
-                            </div>
-                            <h2 class="mb-4 text-2xl font-bold text-[#0F172A] dark:text-white lg:text-3xl">
-                                {{ featuredArticle.title }}
-                            </h2>
-                            <p class="mb-6 text-lg text-[#475569] dark:text-[#94A3B8]">{{ featuredArticle.excerpt }}</p>
-                            <router-link :to="`/news/${featuredArticle.id}`" class="inline-flex items-center gap-2 font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
-                                Read Full Article
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </router-link>
-                        </div>
+                    <div class="flex flex-wrap items-center gap-4 text-sm sm:text-base text-[#64748B] dark:text-[#94A3B8]">
+                        <span>{{ article.date }}</span>
+                        <span>{{ article.readTime }}</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Category Filter -->
-        <section class="border-b border-[#E2E8F0] dark:border-[#334155] bg-white dark:bg-[#0F172A] py-6">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button
-                        v-for="category in categories"
-                        :key="category.id"
-                        :class="[
-                            'rounded-full px-6 py-2 text-sm font-medium transition-all',
-                            activeCategory === category.id
-                                ? 'bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] text-white'
-                                : 'bg-[#F1F5F9] dark:bg-[#334155] text-[#475569] dark:text-[#94A3B8] hover:bg-[#E2E8F0] dark:hover:bg-[#475569]',
-                        ]"
-                        @click="filterByCategory(category.id)"
+        <!-- Article Image -->
+        <section class="relative -mt-8 z-10 pb-8 bg-white dark:bg-[#0F172A]">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div class="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
+                    <img
+                        :src="article.image"
+                        :alt="article.title"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#0F172A]">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <article class="prose prose-sm sm:prose-base md:prose-lg dark:prose-invert max-w-none">
+                    <p class="text-lg sm:text-xl md:text-2xl text-[#475569] dark:text-[#94A3B8] mb-6 sm:mb-8 leading-relaxed font-medium">
+                        {{ article.excerpt }}
+                    </p>
+                    <div class="text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">
+                        {{ article.fullContent }}
+                    </div>
+                </article>
+
+                <!-- Back to News Button -->
+                <div class="mt-12 sm:mt-16 pt-8 border-t border-[#E2E8F0] dark:border-[#334155]">
+                    <router-link
+                        to="/news"
+                        class="btn-secondary inline-flex items-center gap-2"
                     >
-                        {{ category.label }}
-                    </button>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to All News
+                    </router-link>
                 </div>
             </div>
         </section>
-
-        <!-- Articles Grid -->
-        <section class="py-24 lg:py-32 bg-white dark:bg-[#0F172A]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <article
-                        v-for="article in filteredArticles"
-                        :key="article.id"
-                        class="card-modern group overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl"
-                    >
-                        <div class="relative h-48 overflow-hidden">
-                            <img
-                                :src="article.image"
-                                :alt="article.title"
-                                class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <span :class="['absolute top-4 left-4 rounded-full px-3 py-1 text-xs font-medium capitalize', getCategoryColor(article.category)]">
-                                {{ article.category }}
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <div class="mb-3 flex items-center gap-3 text-sm text-[#64748B] dark:text-[#94A3B8]">
-                                <span>{{ article.date }}</span>
-                                <span>{{ article.readTime }}</span>
-                            </div>
-                            <h3 class="mb-3 text-lg font-bold text-[#0F172A] dark:text-white transition-colors group-hover:text-[#0EA5E9]">
-                                {{ article.title }}
-                            </h3>
-                            <p class="mb-4 text-[#475569] dark:text-[#94A3B8]">{{ article.excerpt }}</p>
-                            <router-link :to="`/news/${article.id}`" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0EA5E9] transition-colors hover:text-[#0284C7]">
-                                Read More
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </router-link>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Load More -->
-                <div class="mt-12 text-center">
-                    <button class="btn-secondary">
-                        Load More Articles
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter -->
-        <section class="bg-[#F8FAFC] dark:bg-[#1E293B] py-24 lg:py-32">
-            <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-                <div class="overflow-hidden bg-gradient-to-r from-[#0EA5E9] to-[#8B5CF6] dark:from-[#0F172A] dark:to-[#1E293B] rounded-3xl p-8 lg:p-12 border border-[#0EA5E9]/20 dark:border-white/20 shadow-2xl transition-all hover:shadow-3xl">
-                    <h2 class="mb-4 text-2xl font-bold text-white sm:text-3xl">
-                        Subscribe to Our Newsletter
-                    </h2>
-                    <p class="mb-8 text-white/90 dark:text-white/70">
-                        Get the latest news, impact stories, and updates delivered directly to your inbox.
-                    </p>
-                    <form class="mx-auto flex max-w-lg flex-col gap-4 sm:flex-row">
-                        <input
-                            type="email"
-                            class="input-modern flex-1 bg-white/20 dark:bg-white/10 border-white/30 dark:border-white/20 text-white placeholder:text-white/70 dark:placeholder:text-white/50"
-                            placeholder="Enter your email"
-                        />
-                        <button type="submit" class="btn-primary whitespace-nowrap">
-                            Subscribe
-                        </button>
-                    </form>
-                    <p class="mt-4 text-xs text-white/80 dark:text-white/50">
-                        We respect your privacy. Unsubscribe at any time.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Press Contact -->
-        <section class="py-24 lg:py-32 bg-white dark:bg-[#0F172A]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="grid items-center gap-12 lg:grid-cols-2">
-                    <div>
-                        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#8B5CF6]/10 px-4 py-2">
-                            <div class="h-1.5 w-1.5 rounded-full bg-[#8B5CF6]"></div>
-                            <span class="text-sm font-semibold text-[#8B5CF6]">Media</span>
-                        </div>
-                        <h2 class="mb-6 text-3xl font-bold text-[#0F172A] dark:text-white">Press & Media Inquiries</h2>
-                        <p class="mb-8 text-lg text-[#475569] dark:text-[#94A3B8]">
-                            For press releases, media kits, interview requests, or any media-related inquiries, please contact our communications team.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-4">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B5CF6]/10">
-                                    <svg class="h-6 w-6 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-[#0F172A] dark:text-white">Email</p>
-                                    <a href="mailto:press@carerural.org" class="text-[#0EA5E9]">press@carerural.org</a>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B5CF6]/10">
-                                    <svg class="h-6 w-6 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-[#0F172A] dark:text-white">Phone</p>
-                                    <a href="tel:+18005557777" class="text-[#0EA5E9]">+1 (800) 555-7777</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-modern p-8">
-                        <h3 class="mb-6 text-xl font-bold text-[#0F172A] dark:text-white">Download Media Kit</h3>
-                        <p class="mb-6 text-[#475569] dark:text-[#94A3B8]">
-                            Access our press kit containing logos, fact sheets, high-resolution images, and key information about CareRural.
-                        </p>
-                        <a href="#" class="btn-primary inline-flex items-center gap-2">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            Download Media Kit
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
+    </div>
 </template>
+
