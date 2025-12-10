@@ -352,7 +352,7 @@ const socialLinks = [
                     </div>
 
                     <!-- Contact Info -->
-                    <div class="lg:col-span-1">
+                    <div class="hidden sm:block lg:col-span-1">
                         <h3 class="mb-6 text-lg font-bold text-[#0F172A] dark:text-white">Contact Us</h3>
                         <ul class="space-y-4">
                             <li class="flex gap-3 sm:gap-4 items-start">
