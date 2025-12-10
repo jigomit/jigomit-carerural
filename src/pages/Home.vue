@@ -535,10 +535,19 @@ onMounted(() => {
                     <article
                         v-for="article in news"
                         :key="article.title"
-                        class="card-modern group overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl"
+                        class="card-modern group overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-[#1E293B]"
                     >
-                        <div class="relative h-48 overflow-hidden" style="aspect-ratio: 16/9;">
-                            <img :src="article.image" :alt="article.title" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" width="400" height="225" style="aspect-ratio: 16/9;" />
+                        <div class="relative w-full overflow-hidden rounded-t-2xl" style="aspect-ratio: 16/9; min-height: 200px; max-height: 250px;">
+                            <img 
+                                :src="article.image" 
+                                :alt="article.title" 
+                                class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" 
+                                loading="lazy" 
+                                width="400" 
+                                height="225"
+                                style="display: block;"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'225\'%3E%3Crect fill=\'%23E2E8F0\' width=\'400\' height=\'225\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23475569\' font-family=\'sans-serif\' font-size=\'16\'%3ENews Image%3C/text%3E%3C/svg%3E';"
+                            />
                         </div>
                         <div class="p-6">
                             <p class="mb-2 text-sm text-[#64748B] dark:text-[#94A3B8]">{{ article.date }}</p>
