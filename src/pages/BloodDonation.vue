@@ -251,7 +251,7 @@ onMounted(() => {
                         </div>
                     </div>
 
-                    <div class="relative">
+                    <div class="relative overflow-visible sm:overflow-hidden">
                         <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-transparent">
                             <img
                                 src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=800&q=80"
@@ -261,16 +261,16 @@ onMounted(() => {
                             <div class="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[#0F172A]/60 via-transparent to-transparent"></div>
                         </div>
                         <!-- Impact badge -->
-                        <div class="absolute -bottom-6 -left-6 animate-float rounded-2xl p-4 shadow-xl bg-white/70 dark:bg-[#1E293B]/70 backdrop-blur-xl border border-white/30 dark:border-transparent">
-                            <div class="flex items-center gap-3">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#EF4444] to-[#DC2626]">
-                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="absolute bottom-4 sm:bottom-4 md:-bottom-6 left-4 sm:left-4 md:-left-6 animate-float rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-xl bg-white/90 dark:bg-[#1E293B]/90 backdrop-blur-xl border border-white/30 dark:border-transparent max-w-[calc(100%-2rem)] sm:max-w-none z-10">
+                            <div class="flex items-center gap-2 sm:gap-3">
+                                <div class="flex h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#EF4444] to-[#DC2626] flex-shrink-0">
+                                    <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </div>
-                                <div>
-                                    <p class="text-2xl font-bold text-[#0F172A] dark:text-white">1 = 3</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Donation = Lives Saved</p>
+                                <div class="min-w-0">
+                                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#0F172A] dark:text-white leading-tight">1 = 3</p>
+                                    <p class="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-[#64748B] dark:text-[#94A3B8] leading-tight whitespace-nowrap">Donation = Lives Saved</p>
                                 </div>
                             </div>
                         </div>
